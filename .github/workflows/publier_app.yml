@@ -27,5 +27,5 @@ jobs:
     - name: Téléverser le fichier .EXE final
       uses: actions/upload-artifact@v4
       with:
-        name: MonApplicationStandalone
+        name: XavuiserieZombieSolver
         path: '**/bin/Release/net10.0-windows/win-x64/publish/*.exe'
