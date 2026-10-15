@@ -24,8 +24,14 @@ jobs:
     - name: Compiler et Publier l'exécutable Standalone Unique
       run: dotnet publish --configuration Release
 
-    - name: Téléverser le fichier .EXE final
-      uses: actions/upload-artifact@v4
+    - name: Créer une Release et publier le fichier .EXE
+      uses: softprops/action-gh-release@v2
+      if: github.ref == 'refs/heads/main'
       with:
-        name: XavuiserieZombieSolver
-        path: '**/bin/Release/net10.0-windows/win-x64/publish/*.exe'
+        tag_name: v1.0.${{ github.run_number }} # Crée une version automatique (ex: v1.0.1, v1.0.2)
+        name: Version Automatique v1.0.${{ github.run_number }}
+        draft: false
+        prerelease: false
+        files: '**/bin/Release/net10.0-windows/win-x64/publish/*.exe'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
