@@ -9,7 +9,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using XavuiserieZombieSolver.src;
 
 namespace XavuiserieZombieSolver
 {
@@ -21,23 +20,6 @@ namespace XavuiserieZombieSolver
         public MainWindow()
         {
             InitializeComponent();
-
-            selectLumiere.ItemsSource = Enum.GetValues(typeof(ValveNames));
-            selectCylindre.ItemsSource = Enum.GetValues(typeof(ValveNames));
-
-            GridResult.ItemsSource = null;
-        }
-
-        private void Select_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (selectLumiere.SelectedItem is ValveNames lumiere && selectCylindre.SelectedItem is ValveNames cylindre)
-            {
-                Solver solver = new Solver(lumiere, cylindre);
-
-                Dictionary<ValveNames, int>? result = solver.Solve();
-
-                GridResult.ItemsSource = result;
-            }
         }
     }
 }

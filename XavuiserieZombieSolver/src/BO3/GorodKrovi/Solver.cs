@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
-namespace XavuiserieZombieSolver.src
+namespace XavuiserieZombieSolver.src.BO3.GorodKrovi
 {
     internal class Solver
     {

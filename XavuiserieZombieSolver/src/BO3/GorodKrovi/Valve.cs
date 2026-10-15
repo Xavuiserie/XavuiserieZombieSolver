@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace XavuiserieZombieSolver.src
+namespace XavuiserieZombieSolver.src.BO3.GorodKrovi
 {
     public static class Valve
     {
