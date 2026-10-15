@@ -34,18 +34,19 @@ namespace XavuiserieZombieSolver.src
         {
             if (chemin.Count == 6)
             {
-                return chemin;
+                if (chemin.Last() == valveCylindre) return chemin;
+
+                return null;
             }
 
-            foreach (KeyValuePair<int, ValveNames> dest in chemin.LastOrDefault().Chemins())
+            foreach (KeyValuePair<int, ValveNames> dest in chemin.Last().Chemins())
             {
-                if (dest.Value == valveCylindre && chemin.Count == 5)
+                if (dest.Value == valveCylindre && chemin.Count < 5)
                 {
-                    chemin.Add(valveCylindre);
-                    return chemin;
+                    continue;
                 }
 
-                if (!chemin.Contains(dest.Value) && dest.Value != this.valveCylindre)
+                if (!chemin.Contains(dest.Value))
                 {
                     chemin.Add(dest.Value);
                     List<ValveNames>? result = this.Recursion(chemin);
@@ -54,6 +55,8 @@ namespace XavuiserieZombieSolver.src
                     {
                         return result;
                     }
+
+                    chemin.RemoveAt(chemin.Count - 1);
                 }
             }
 
