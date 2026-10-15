@@ -26,9 +26,9 @@ jobs:
 
     - name: Créer une Release et publier le fichier .EXE
       uses: softprops/action-gh-release@v2
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/master'  # Modifié ici pour correspondre à votre branche 'master'
       with:
-        tag_name: v1.0.${{ github.run_number }} # Crée une version automatique (ex: v1.0.1, v1.0.2)
+        tag_name: v1.0.${{ github.run_number }}
         name: Version Automatique v1.0.${{ github.run_number }}
         draft: false
         prerelease: false
