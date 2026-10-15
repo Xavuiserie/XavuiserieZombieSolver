@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    
+    permissions:
+      contents: write
 
     steps:
     - name: Récupérer le code source
@@ -34,4 +37,4 @@ jobs:
         prerelease: false
         files: '**/bin/Release/net10.0-windows/win-x64/publish/*.exe'
       env:
-        GITHUB_TOKEN: ${{ secrets.MON_SUPER_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
