@@ -18,8 +18,11 @@
 		<!-- ON DÉSACTIVE L'ÉLAGAGE POUR ÉVITER LE CRASH DE RENDU XAML -->
 		<PublishTrimmed>false</PublishTrimmed>
 
-		<!-- MAGIE : On compresse fortement le framework .NET à l'intérieur de l'unique .exe -->
-		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+		<!-- CORRECTION : Désactivation de la compression pour intégrer les bibliothèques de liaison de données manquantes-->
+		<EnableCompressionInSingleFile>false</EnableCompressionInSingleFile>
+
+		<!-- CORRECTION : Désactivation du ReadyToRun pour éviter les corruptions graphiques sur les PC sans outils de dév -->
+		<PublishReadyToRun>false</PublishReadyToRun>
 	</PropertyGroup>
 
 </Project>
