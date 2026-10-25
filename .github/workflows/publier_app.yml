@@ -32,7 +32,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       with:
         tag_name: v1.0.${{ github.run_number }}
-        name: Version Automatique v1.0.${{ github.run_number }}
+        name: v1.0.${{ github.run_number }}
         draft: false
         prerelease: false
         files: '**/bin/Release/net10.0-windows/win-x64/publish/*.exe'
