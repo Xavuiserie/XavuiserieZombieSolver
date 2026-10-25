@@ -11,45 +11,48 @@ namespace XavuiserieZombieSolver.src.BO3.GorodKrovi
             return valve switch
             {
                 ValveNames.DragonCommand => new Dictionary<int, ValveNames>
-                    {
-                        {1, ValveNames.DepartementStore },
-                        {2, ValveNames.Armory },
-                        {3, ValveNames.Infirmary }
-                    },
+                {
+                    { 1, ValveNames.SupplyDepot },
+                    { 2, ValveNames.DepartmentStore },
+                    { 3, ValveNames.Infirmary }
+                },
 
                 ValveNames.SupplyDepot => new Dictionary<int, ValveNames>
-                    {
-                        {1, ValveNames.DragonCommand },
-                        {2, ValveNames.Armory },
-                        {3, ValveNames.TankFactory }
-                    },
-                ValveNames.TankFactory => new Dictionary<int, ValveNames>
-                    {
-                        {1, ValveNames.DragonCommand },
-                        {2, ValveNames.SupplyDepot },
-                        {3, ValveNames.Infirmary }
-                    },
+                {
+                    { 1, ValveNames.DragonCommand },
+                    { 2, ValveNames.Armory },
+                    { 3, ValveNames.TankFactory }
+                },
 
-                ValveNames.DepartementStore => new Dictionary<int, ValveNames>
-                    {
-                        {1, ValveNames.Armory },
-                        {2, ValveNames.SupplyDepot },
-                        {3, ValveNames.Infirmary }
-                    },
+                ValveNames.TankFactory => new Dictionary<int, ValveNames>
+                {
+                    { 1, ValveNames.Infirmary },
+                    { 2, ValveNames.SupplyDepot },
+                    { 3, ValveNames.Armory }
+                },
+
+                ValveNames.DepartmentStore => new Dictionary<int, ValveNames>
+                {
+                    { 1, ValveNames.Armory },
+                    { 2, ValveNames.Infirmary },
+                    { 3, ValveNames.DragonCommand }
+                },
 
                 ValveNames.Armory => new Dictionary<int, ValveNames>
-                    {
-                        {1, ValveNames.DragonCommand },
-                        {2, ValveNames.DepartementStore },
-                        {3, ValveNames.TankFactory }
-                    },
+                {
+                    { 1, ValveNames.SupplyDepot },
+                    { 2, ValveNames.TankFactory },
+                    { 3, ValveNames.DepartmentStore }
+                },
 
                 ValveNames.Infirmary => new Dictionary<int, ValveNames>
-                    {
-                        {1, ValveNames.DepartementStore },
-                        {2, ValveNames.TankFactory },
-                        {3, ValveNames.SupplyDepot }
-                    }
+                {
+                    { 1, ValveNames.DepartmentStore },
+                    { 2, ValveNames.TankFactory },
+                    { 3, ValveNames.DragonCommand }
+                },
+
+                _ => throw new ArgumentOutOfRangeException(nameof(valve), valve, "Valve inconnue.")
             };
         }
 

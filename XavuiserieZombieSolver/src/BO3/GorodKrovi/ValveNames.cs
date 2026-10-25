@@ -9,7 +9,7 @@ namespace XavuiserieZombieSolver.src.BO3.GorodKrovi
         DragonCommand = 1,
         SupplyDepot = 2,
         TankFactory = 3,
-        DepartementStore = 4,
+        DepartmentStore = 4,
         Armory = 5,
         Infirmary = 6,
     }
